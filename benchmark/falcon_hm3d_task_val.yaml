@@ -10,8 +10,9 @@ defaults:
   - /habitat/simulator/agents@habitat.simulator.agents.agent_4: human_4
   - /habitat/simulator/agents@habitat.simulator.agents.agent_5: human_5
   - /habitat/simulator/agents@habitat.simulator.agents.agent_6: human_6
-  # - /habitat/task: falcon_task_detail
-  - /task: falcon_task_detail
+  - /habitat/task: falcon_task_detail
+  # - /habitat/task@habitat.task: falcon_task_detail
+  # - /task: falcon_task_detail
   - /dataset: social-hm3d-val
   - _self_
 
