@@ -88,6 +88,60 @@ habitat:
         lin_speed: 10.0
         ang_speed: 10.0
         allow_dyn_slide: True
+        measurements:
+    measurements:
+      distance_to_goal:
+        type: DistanceToGoal
+        distance_to: POINT
+      distance_to_goal_reward:
+        type: DistanceToGoalReward
+      multi_agent_nav_reward:
+        type: MultiAgentNavReward
+        use_geo_distance: true
+        allow_distance: 2.0
+        collide_scene_penalty: -0.005
+        collide_human_penalty: -0.015
+        facing_human_dis: 2.0
+        human_face_robot_threshold: 0.5
+        close_to_human_penalty: -0.003
+        trajectory_cover_penalty: -0.0005
+        cover_future_dis_thre: 0.05
+        robot_idx: 0
+      success:
+        type: Success
+        success_distance: 0.2
+      did_multi_agents_collide:
+        type: DidMultiAgentsCollide
+      num_steps:
+        type: NumStepsMeasure
+      top_down_map:
+        type: TopDownMap
+        max_episode_steps: 1000
+        map_padding: 3
+        map_resolution: 1024
+        draw_source: true
+        draw_border: true
+        draw_shortest_path: true
+        draw_view_points: true
+        draw_goal_positions: true
+        draw_goal_aabbs: true
+        fog_of_war:
+          draw: true
+          visibility_dist: 5.0
+          fov: 90
+      spl:
+        type: SPL
+      psc:
+        type: PersonalSpaceCompliance
+        use_geo_distance: true
+      stl:
+        type: STL
+      human_collision:
+        type: HumanCollision
+      human_future_trajectory:
+        type: HumanFutureTrajectory
+
+
 habitat_baselines:
   evaluate: True
   verbose: True # False
