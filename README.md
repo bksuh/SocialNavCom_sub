@@ -34,3 +34,13 @@ python -u -m habitat_baselines.eval --config-name=falcon_hm3d_replay.yaml
 ```
 python -u -m habitat_baselines.eval --config-name=falcon_hm3d_val.yaml
 ```
+
+PHASE 2를 위한
+```
+docker run -it \
+    --gpus all \
+    --runtime=nvidia \
+    -v /home/bksuh/Desktop/SocialNav7/submission:/app/Falcon/input \
+    -v /home/bksuh/Desktop/SocialNav7/data:/app/Falcon/data \
+    zeyinggong/robosense_socialnav:v0.7
+```
